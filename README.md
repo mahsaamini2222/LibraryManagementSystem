@@ -1,4 +1,4 @@
 # LibraryManagementSystem
-Library Management System in C++ and Qt - AP Project @IUT \n
-project by Niloufar Saeedi, Mahsa Amini, Alireza Mousavi \n
+Library Management System in C++ and Qt - AP Project @IUT
+Project by Niloufar Saeedi, Mahsa Amini, Alireza Mousavi
 Course presented by Ehsan Mahdavi
