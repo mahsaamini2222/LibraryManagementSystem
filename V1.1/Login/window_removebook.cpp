@@ -12,8 +12,3 @@ Window_RemoveBook::~Window_RemoveBook()
 {
     delete ui;
 }
-
-void Window_RemoveBook::on_pushButton_RemoveBook_clicked()
-{
-    QString BookId = ui->lineEdit_BookId->text();
-}
