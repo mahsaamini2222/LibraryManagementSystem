@@ -1,15 +1,6 @@
 #include "window_addbook.h"
 #include "ui_window_addbook.h"
-#include <QFile>
-#include <QTextStream>
-#include <QDebug>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QJsonArray>
-#include <bits/stdc++.h>
-#include <QDateTime>
-#include <QString>
-int LibraryBookCount=0;
+
 Window_AddBook::Window_AddBook(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Window_AddBook)
@@ -21,6 +12,7 @@ Window_AddBook::~Window_AddBook()
 {
     delete ui;
 }
+<<<<<<< HEAD
 
 void Window_AddBook::on_pushButton_AddBook_clicked()
 {
@@ -78,3 +70,5 @@ void Window_AddBook::on_pushButton_AddBook_clicked()
 }
 
 
+=======
+>>>>>>> parent of 8b849e1... add_book json completed

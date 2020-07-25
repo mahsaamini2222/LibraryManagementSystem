@@ -15,11 +15,6 @@ public:
     explicit Window_AddBook(QWidget *parent = nullptr);
     ~Window_AddBook();
 
-private slots:
-    void on_pushButton_AddBook_clicked();
-
-    void on_lineEdit_BookName_editingFinished();
-
 private:
     Ui::Window_AddBook *ui;
 };
