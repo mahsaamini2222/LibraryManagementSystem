@@ -24,6 +24,7 @@ Window_AddBook::~Window_AddBook()
 
 void Window_AddBook::on_pushButton_AddBook_clicked()
 {
+     QString BookId = ui->lineEdit_BookId->text();
      QString BookName = ui->lineEdit_BookName->text();
      QString Author = ui->lineEdit_AuthorName->text();
      QString Subject = ui->lineEdit_Subject->text();
@@ -51,14 +52,14 @@ void Window_AddBook::on_pushButton_AddBook_clicked()
     file.close();
 
 
-    QJsonObject projectDetails = { /*{"id", LibraryBookCount},*/
+    QJsonObject projectDetails = { /*{"id", BookId},*/
                                    {"status", "available"},
                                    {"date_added", QDateTime::currentDateTime().toString( "yyyy-MM-dd hh:mm:ss" )},
                                    {"name", BookName},
                                    {"author", Author},
                                    {"subject", Subject}
                                  };
-    QJsonObject notificationObj =  {{ BookName, projectDetails }};
+    QJsonObject notificationObj =  {{ BookId, projectDetails }};
 
     QJsonArray arrLog = jsonOrg.array();
     arrLog.push_back( notificationObj );

@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Window_RemoveBook_t {
-    QByteArrayData data[1];
-    char stringdata0[18];
+    QByteArrayData data[3];
+    char stringdata0[52];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -31,10 +31,13 @@ struct qt_meta_stringdata_Window_RemoveBook_t {
     )
 static const qt_meta_stringdata_Window_RemoveBook_t qt_meta_stringdata_Window_RemoveBook = {
     {
-QT_MOC_LITERAL(0, 0, 17) // "Window_RemoveBook"
+QT_MOC_LITERAL(0, 0, 17), // "Window_RemoveBook"
+QT_MOC_LITERAL(1, 18, 32), // "on_pushButton_RemoveBook_clicked"
+QT_MOC_LITERAL(2, 51, 0) // ""
 
     },
-    "Window_RemoveBook"
+    "Window_RemoveBook\0on_pushButton_RemoveBook_clicked\0"
+    ""
 };
 #undef QT_MOC_LITERAL
 
@@ -44,21 +47,32 @@ static const uint qt_meta_data_Window_RemoveBook[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+       1,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
+ // slots: name, argc, parameters, tag, flags
+       1,    0,   19,    2, 0x08 /* Private */,
+
+ // slots: parameters
+    QMetaType::Void,
+
        0        // eod
 };
 
 void Window_RemoveBook::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    Q_UNUSED(_o);
-    Q_UNUSED(_id);
-    Q_UNUSED(_c);
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        Window_RemoveBook *_t = static_cast<Window_RemoveBook *>(_o);
+        Q_UNUSED(_t)
+        switch (_id) {
+        case 0: _t->on_pushButton_RemoveBook_clicked(); break;
+        default: ;
+        }
+    }
     Q_UNUSED(_a);
 }
 
@@ -84,6 +98,17 @@ void *Window_RemoveBook::qt_metacast(const char *_clname)
 int Window_RemoveBook::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 1)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 1;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 1)
+            *reinterpret_cast<int*>(_a[0]) = -1;
+        _id -= 1;
+    }
     return _id;
 }
 QT_WARNING_POP

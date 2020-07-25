@@ -30,14 +30,10 @@ public:
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
-    QLabel *label_BookName;
-    QLineEdit *lineEdit_BookName;
     QHBoxLayout *horizontalLayout_2;
-    QLabel *label_AuthorName;
-    QLineEdit *lineEdit_AuthorName;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_Subject;
-    QLineEdit *lineEdit_Subject;
+    QLineEdit *lineEdit_BookId;
     QPushButton *pushButton_RemoveBook;
 
     void setupUi(QDialog *Window_RemoveBook)
@@ -53,31 +49,11 @@ public:
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        label_BookName = new QLabel(layoutWidget);
-        label_BookName->setObjectName(QStringLiteral("label_BookName"));
-
-        horizontalLayout->addWidget(label_BookName);
-
-        lineEdit_BookName = new QLineEdit(layoutWidget);
-        lineEdit_BookName->setObjectName(QStringLiteral("lineEdit_BookName"));
-
-        horizontalLayout->addWidget(lineEdit_BookName);
-
 
         verticalLayout->addLayout(horizontalLayout);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        label_AuthorName = new QLabel(layoutWidget);
-        label_AuthorName->setObjectName(QStringLiteral("label_AuthorName"));
-
-        horizontalLayout_2->addWidget(label_AuthorName);
-
-        lineEdit_AuthorName = new QLineEdit(layoutWidget);
-        lineEdit_AuthorName->setObjectName(QStringLiteral("lineEdit_AuthorName"));
-
-        horizontalLayout_2->addWidget(lineEdit_AuthorName);
-
 
         verticalLayout->addLayout(horizontalLayout_2);
 
@@ -88,10 +64,10 @@ public:
 
         horizontalLayout_3->addWidget(label_Subject);
 
-        lineEdit_Subject = new QLineEdit(layoutWidget);
-        lineEdit_Subject->setObjectName(QStringLiteral("lineEdit_Subject"));
+        lineEdit_BookId = new QLineEdit(layoutWidget);
+        lineEdit_BookId->setObjectName(QStringLiteral("lineEdit_BookId"));
 
-        horizontalLayout_3->addWidget(lineEdit_Subject);
+        horizontalLayout_3->addWidget(lineEdit_BookId);
 
 
         verticalLayout->addLayout(horizontalLayout_3);
@@ -110,9 +86,7 @@ public:
     void retranslateUi(QDialog *Window_RemoveBook)
     {
         Window_RemoveBook->setWindowTitle(QApplication::translate("Window_RemoveBook", "Dialog", Q_NULLPTR));
-        label_BookName->setText(QApplication::translate("Window_RemoveBook", "BookName", Q_NULLPTR));
-        label_AuthorName->setText(QApplication::translate("Window_RemoveBook", "Author", Q_NULLPTR));
-        label_Subject->setText(QApplication::translate("Window_RemoveBook", "Subject", Q_NULLPTR));
+        label_Subject->setText(QApplication::translate("Window_RemoveBook", "book ID", Q_NULLPTR));
         pushButton_RemoveBook->setText(QApplication::translate("Window_RemoveBook", "RemoveBook", Q_NULLPTR));
     } // retranslateUi
 

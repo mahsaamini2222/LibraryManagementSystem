@@ -39,6 +39,8 @@ public:
     QLabel *label_Subject;
     QLineEdit *lineEdit_Subject;
     QPushButton *pushButton_AddBook;
+    QLabel *label;
+    QLineEdit *lineEdit_BookId;
 
     void setupUi(QDialog *Window_AddBook)
     {
@@ -47,7 +49,7 @@ public:
         Window_AddBook->resize(617, 490);
         layoutWidget = new QWidget(Window_AddBook);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(170, 110, 271, 241));
+        layoutWidget->setGeometry(QRect(170, 110, 271, 251));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -101,6 +103,12 @@ public:
 
         verticalLayout->addWidget(pushButton_AddBook);
 
+        label = new QLabel(Window_AddBook);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(170, 80, 67, 17));
+        lineEdit_BookId = new QLineEdit(Window_AddBook);
+        lineEdit_BookId->setObjectName(QStringLiteral("lineEdit_BookId"));
+        lineEdit_BookId->setGeometry(QRect(290, 80, 151, 25));
 
         retranslateUi(Window_AddBook);
 
@@ -114,6 +122,7 @@ public:
         label_AuthorName->setText(QApplication::translate("Window_AddBook", "Author", Q_NULLPTR));
         label_Subject->setText(QApplication::translate("Window_AddBook", "Subject", Q_NULLPTR));
         pushButton_AddBook->setText(QApplication::translate("Window_AddBook", "AddBook", Q_NULLPTR));
+        label->setText(QApplication::translate("Window_AddBook", "Book Id", Q_NULLPTR));
     } // retranslateUi
 
 };
