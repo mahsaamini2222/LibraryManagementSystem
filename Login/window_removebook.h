@@ -15,6 +15,9 @@ public:
     explicit Window_RemoveBook(QWidget *parent = nullptr);
     ~Window_RemoveBook();
 
+private slots:
+    void on_pushButton_RemoveBook_clicked();
+
 private:
     Ui::Window_RemoveBook *ui;
 };
