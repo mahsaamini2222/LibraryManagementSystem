@@ -25,18 +25,18 @@ void Window_RemoveBook::on_pushButton_RemoveBook_clicked()
     {
         qDebug()<<"error opening file for removing the book.\n";
     }
-     QJsonDocument jsonOrg = QJsonDocument::fromJson( file.readAll() );
+     QJsonDocument jsonDoc = QJsonDocument::fromJson( file.readAll() );
 //    char book_id[30];
 //    strcpy(book_id,BookId);
-//      jsonOrg.remove(BookId);
-      QJsonArray arrLog = jsonOrg.array();
-//      remove(arrLog.find(BookId));
-      QJsonObject element [arrLog.count];
-      for(int i=0;i<arrLog.count();i++) {
-      element[i] = arrLog.at(i).toObject();
+//      jsonDoc.remove(BookId);
+      QJsonArray jArr = jsonDoc.array();
+//      remove(jArr.find(BookId));
+      QJsonObject element [jArr.count];
+      for(int i=0;i<jArr.count();i++) {
+      element[i] = jArr.at(i).toObject();
       }
 //      qDebug() << element.value("number").toInt();
-      QJsonDocument doc( arrLog );
+      QJsonDocument doc( jArr );
 
       file.write(doc.toJson());
       file.close();
