@@ -5,6 +5,8 @@
 #include <QFile>
 #include <QDebug>
 #include <QJsonParseError>
+#include<QJsonArray>
+#include<QJsonValueRef>
 #define AddedBooks ":/Data/RowData/AddedBooks.json"
 Window_RemoveBook::Window_RemoveBook(QWidget *parent) :
     QDialog(parent),
@@ -53,9 +55,23 @@ void Window_RemoveBook::on_pushButton_RemoveBook_clicked()
 
     AddedBooksFile.close();
 
-//    QJsonObject RootObject = JsonDocument.object();
-//    QJsonArray Array = RootObject.value("array").toArray();
+    QJsonObject RootObject = JsonDocument.object();
+    QJsonValueRef ArrayRef = RootObject.find(BookId).value();
+    QJsonArray Array = ArrayRef.toArray();
 
-//    QJsonObject ElementOneObject = Array.at(0).toObject();
+    QJsonArray::iterator ArrayIterator = Array.begin();
+    QJsonValueRef ElementOneValueRef = ArrayIterator[0];
 
+    QJsonObject ElementOneObject = ElementOneValueRef.toObject();
+
+    // Make modifications to ElementOneObject
+    ElementOneObject=QJsonObject();
+
+    ElementOneValueRef = ElementOneObject;
+    ArrayRef = Array;
+    JsonDocument.setObject(RootObject);
+
+    AddedBooksFile.open(QFile::WriteOnly | QFile::Text | QFile::Truncate);
+    AddedBooksFile.write(JsonDocument.toJson());
+    AddedBooksFile.close();
 }

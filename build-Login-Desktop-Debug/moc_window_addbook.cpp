@@ -73,7 +73,6 @@ void Window_AddBook::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_pushButton_AddBook_clicked(); break;
-
         default: ;
         }
     }
