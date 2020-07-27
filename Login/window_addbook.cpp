@@ -9,7 +9,7 @@
 #include <bits/stdc++.h>
 #include <QDateTime>
 #include <QString>
-#define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
+#define AddedBooks ":/Data/RowData/AddedBooks.json"
 Window_AddBook::Window_AddBook(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Window_AddBook)
