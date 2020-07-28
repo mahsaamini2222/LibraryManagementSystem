@@ -9,7 +9,8 @@
 #include<QJsonValueRef>
 #include <QJsonDocument>
 //#define AddedBooks ":/Data/RowData/AddedBooks.json"
-#define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
+//#define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
+#define AddedBooks ":/AddBooks/RowData/AddedBooks.json"
 Window_RemoveBook::Window_RemoveBook(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Window_RemoveBook)
