@@ -9,7 +9,7 @@
 #include <bits/stdc++.h>
 #include <QDateTime>
 #include <QString>
-#define AddedBooks ":/Data/RowData/AddedBooks.json"
+#define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
 Window_AddBook::Window_AddBook(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Window_AddBook)
@@ -33,6 +33,8 @@ void Window_AddBook::on_pushButton_AddBook_clicked()
     AddedBooksFile.open(QIODevice::ReadWrite);
 
     QJsonDocument jsonDoc = QJsonDocument::fromJson( AddedBooksFile.readAll() );
+//    QJsonArray jArr = jsonDoc.array();
+    QJsonObject main=jsonDoc.object();
     AddedBooksFile.close();
 
 
@@ -44,12 +46,17 @@ void Window_AddBook::on_pushButton_AddBook_clicked()
                                    {"subject", Subject}
                                  };
 //    QJsonObject ObjID =  {{ BookId, Books }};
-    QJsonObject jobj;
-    jobj[BookId]=Books;
-    QJsonArray jArr = jsonDoc.array();
-    jArr.push_back( jobj);
+    //...................................
+//    QJsonObject jobj;
+//    jobj[BookId]=Books;
+//    jArr.append(jobj);
+//    QJsonObject main;
+    main[BookId]=Books;
+    //................................................
+//    QJsonArray jArr = jsonDoc.array();
+//    jArr.push_back( jobj);
 
-    QJsonDocument doc( jobj );
+    QJsonDocument doc( main );
 
     if( !AddedBooksFile.open( QIODevice::WriteOnly ) ) //write json content to file.
     {

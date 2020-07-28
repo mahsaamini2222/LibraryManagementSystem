@@ -7,7 +7,9 @@
 #include <QJsonParseError>
 #include<QJsonArray>
 #include<QJsonValueRef>
-#define AddedBooks ":/Data/RowData/AddedBooks.json"
+#include <QJsonDocument>
+//#define AddedBooks ":/Data/RowData/AddedBooks.json"
+#define AddedBooks "/home/nilsa/Documents/AP/LibraryManagementSystem/Login/RowData/AddedBooks.json"
 Window_RemoveBook::Window_RemoveBook(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Window_RemoveBook)
@@ -23,7 +25,7 @@ Window_RemoveBook::~Window_RemoveBook()
 void Window_RemoveBook::on_pushButton_RemoveBook_clicked()
 {
     const QString & BookId = ui->lineEdit_BookId->text();
-//    QFile file("/home/nilsa/Documents/AP/LibraryManagementSystem/V1.1/Login/AddedBooks.json"); // json file
+//    QFile file("/home/nilsa/Documents/AP/LibraryManagementSystem/Login/AddedBooks.json"); // json file
 //    if( !file.open( QIODevice::ReadWrite ) ) //write json content to file.
 //    {
 //        qDebug()<<"error opening file for removing the book.\n";
@@ -49,29 +51,33 @@ void Window_RemoveBook::on_pushButton_RemoveBook_clicked()
 
      QFile AddedBooksFile(AddedBooks);
     AddedBooksFile.open(QIODevice::ReadOnly | QIODevice::Text);
+    QByteArray B = AddedBooksFile.readAll();
+    QJsonDocument D = QJsonDocument::fromJson(B);
+    QJsonObject Obj = D.object();
+    qDebug()<<Obj["124"];
 
-    QJsonParseError JsonParseError;
-    QJsonDocument JsonDocument = QJsonDocument::fromJson(AddedBooksFile.readAll(), &JsonParseError);
+//    QJsonParseError JsonParseError;
+//    QJsonDocument JsonDocument = QJsonDocument::fromJson(AddedBooksFile.readAll(), &JsonParseError);
 
-    AddedBooksFile.close();
+//    AddedBooksFile.close();
 
-    QJsonObject RootObject = JsonDocument.object();
-    QJsonValueRef ArrayRef = RootObject.find(BookId).value();
-    QJsonArray Array = ArrayRef.toArray();
+//    QJsonObject RootObject = JsonDocument.object();
+//    QJsonValueRef ArrayRef = RootObject.find(BookId).value();
+//    QJsonArray Array = ArrayRef.toArray();
+//    qDebug()<<Array[0];
+//    QJsonArray::iterator ArrayIterator = Array.begin();
+//    QJsonValueRef ElementOneValueRef = ArrayIterator[0];
 
-    QJsonArray::iterator ArrayIterator = Array.begin();
-    QJsonValueRef ElementOneValueRef = ArrayIterator[0];
+//    QJsonObject ElementOneObject = ElementOneValueRef.toObject();
 
-    QJsonObject ElementOneObject = ElementOneValueRef.toObject();
+//    // Make modifications to ElementOneObject
+//    ElementOneObject=QJsonObject();
 
-    // Make modifications to ElementOneObject
-    ElementOneObject=QJsonObject();
+//    ElementOneValueRef = ElementOneObject;
+//    ArrayRef = Array;
+//    JsonDocument.setObject(RootObject);
 
-    ElementOneValueRef = ElementOneObject;
-    ArrayRef = Array;
-    JsonDocument.setObject(RootObject);
-
-    AddedBooksFile.open(QFile::WriteOnly | QFile::Text | QFile::Truncate);
-    AddedBooksFile.write(JsonDocument.toJson());
-    AddedBooksFile.close();
+//    AddedBooksFile.open(QFile::WriteOnly | QFile::Text | QFile::Truncate);
+//    AddedBooksFile.write(JsonDocument.toJson());
+//    AddedBooksFile.close();
 }
