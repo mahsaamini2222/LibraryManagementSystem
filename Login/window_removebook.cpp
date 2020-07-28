@@ -50,11 +50,21 @@ void Window_RemoveBook::on_pushButton_RemoveBook_clicked()
 
 
      QFile AddedBooksFile(AddedBooks);
-    AddedBooksFile.open(QIODevice::ReadOnly | QIODevice::Text);
+    AddedBooksFile.open(QIODevice::ReadWrite | QIODevice::Text);
     QByteArray B = AddedBooksFile.readAll();
     QJsonDocument D = QJsonDocument::fromJson(B);
     QJsonObject Obj = D.object();
-    qDebug()<<Obj["124"];
+    AddedBooksFile.close();
+    QJsonObject empty ={};
+    Obj.remove(BookId);
+    QJsonDocument FinalD(Obj);
+    if( !AddedBooksFile.open( QIODevice::WriteOnly ) ) //write json content to file.
+    {
+        qDebug()<<"error opening file for write.\n";
+    }
+
+    AddedBooksFile.write(FinalD.toJson());
+    AddedBooksFile.close();
 
 //    QJsonParseError JsonParseError;
 //    QJsonDocument JsonDocument = QJsonDocument::fromJson(AddedBooksFile.readAll(), &JsonParseError);
