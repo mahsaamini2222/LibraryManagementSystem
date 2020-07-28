@@ -19,6 +19,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -39,6 +40,10 @@ public:
     QLabel *label_Subject;
     QLineEdit *lineEdit_Subject;
     QPushButton *pushButton_EditBook;
+    QLineEdit *lineEdit_BookId;
+    QLabel *label;
+    QPushButton *pushButton_Search;
+    QTableWidget *tableWidget;
 
     void setupUi(QDialog *Window_EditBook)
     {
@@ -47,7 +52,7 @@ public:
         Window_EditBook->resize(581, 482);
         layoutWidget = new QWidget(Window_EditBook);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(150, 110, 271, 241));
+        layoutWidget->setGeometry(QRect(310, 110, 261, 251));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -101,6 +106,18 @@ public:
 
         verticalLayout->addWidget(pushButton_EditBook);
 
+        lineEdit_BookId = new QLineEdit(Window_EditBook);
+        lineEdit_BookId->setObjectName(QStringLiteral("lineEdit_BookId"));
+        lineEdit_BookId->setGeometry(QRect(222, 30, 151, 25));
+        label = new QLabel(Window_EditBook);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(150, 30, 67, 17));
+        pushButton_Search = new QPushButton(Window_EditBook);
+        pushButton_Search->setObjectName(QStringLiteral("pushButton_Search"));
+        pushButton_Search->setGeometry(QRect(400, 30, 89, 25));
+        tableWidget = new QTableWidget(Window_EditBook);
+        tableWidget->setObjectName(QStringLiteral("tableWidget"));
+        tableWidget->setGeometry(QRect(20, 110, 271, 221));
 
         retranslateUi(Window_EditBook);
 
@@ -114,6 +131,8 @@ public:
         label_AuthorName->setText(QApplication::translate("Window_EditBook", "Author", Q_NULLPTR));
         label_Subject->setText(QApplication::translate("Window_EditBook", "Subject", Q_NULLPTR));
         pushButton_EditBook->setText(QApplication::translate("Window_EditBook", "EditBook", Q_NULLPTR));
+        label->setText(QApplication::translate("Window_EditBook", "Book ID", Q_NULLPTR));
+        pushButton_Search->setText(QApplication::translate("Window_EditBook", "Search", Q_NULLPTR));
     } // retranslateUi
 
 };

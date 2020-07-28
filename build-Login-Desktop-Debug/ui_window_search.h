@@ -27,7 +27,7 @@ QT_BEGIN_NAMESPACE
 class Ui_Window_Search
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *label_BookName;
@@ -38,27 +38,32 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_Subject;
     QLineEdit *lineEdit_Subject;
-    QPushButton *pushButton_SearchBook;
+    QLabel *label;
+    QLineEdit *lineEdit_BookId;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_4;
 
     void setupUi(QDialog *Window_Search)
     {
         if (Window_Search->objectName().isEmpty())
             Window_Search->setObjectName(QStringLiteral("Window_Search"));
         Window_Search->resize(624, 508);
-        widget = new QWidget(Window_Search);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(180, 100, 271, 241));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(Window_Search);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 100, 271, 261));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        label_BookName = new QLabel(widget);
+        label_BookName = new QLabel(layoutWidget);
         label_BookName->setObjectName(QStringLiteral("label_BookName"));
 
         horizontalLayout->addWidget(label_BookName);
 
-        lineEdit_BookName = new QLineEdit(widget);
+        lineEdit_BookName = new QLineEdit(layoutWidget);
         lineEdit_BookName->setObjectName(QStringLiteral("lineEdit_BookName"));
 
         horizontalLayout->addWidget(lineEdit_BookName);
@@ -68,12 +73,12 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        label_AuthorName = new QLabel(widget);
+        label_AuthorName = new QLabel(layoutWidget);
         label_AuthorName->setObjectName(QStringLiteral("label_AuthorName"));
 
         horizontalLayout_2->addWidget(label_AuthorName);
 
-        lineEdit_AuthorName = new QLineEdit(widget);
+        lineEdit_AuthorName = new QLineEdit(layoutWidget);
         lineEdit_AuthorName->setObjectName(QStringLiteral("lineEdit_AuthorName"));
 
         horizontalLayout_2->addWidget(lineEdit_AuthorName);
@@ -83,12 +88,12 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        label_Subject = new QLabel(widget);
+        label_Subject = new QLabel(layoutWidget);
         label_Subject->setObjectName(QStringLiteral("label_Subject"));
 
         horizontalLayout_3->addWidget(label_Subject);
 
-        lineEdit_Subject = new QLineEdit(widget);
+        lineEdit_Subject = new QLineEdit(layoutWidget);
         lineEdit_Subject->setObjectName(QStringLiteral("lineEdit_Subject"));
 
         horizontalLayout_3->addWidget(lineEdit_Subject);
@@ -96,11 +101,24 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_3);
 
-        pushButton_SearchBook = new QPushButton(widget);
-        pushButton_SearchBook->setObjectName(QStringLiteral("pushButton_SearchBook"));
-
-        verticalLayout->addWidget(pushButton_SearchBook);
-
+        label = new QLabel(Window_Search);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(20, 50, 67, 17));
+        lineEdit_BookId = new QLineEdit(Window_Search);
+        lineEdit_BookId->setObjectName(QStringLiteral("lineEdit_BookId"));
+        lineEdit_BookId->setGeometry(QRect(100, 50, 181, 25));
+        pushButton = new QPushButton(Window_Search);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(320, 50, 89, 25));
+        pushButton_2 = new QPushButton(Window_Search);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(320, 130, 131, 25));
+        pushButton_3 = new QPushButton(Window_Search);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(320, 220, 131, 25));
+        pushButton_4 = new QPushButton(Window_Search);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setGeometry(QRect(320, 310, 131, 25));
 
         retranslateUi(Window_Search);
 
@@ -113,7 +131,11 @@ public:
         label_BookName->setText(QApplication::translate("Window_Search", "BookName", Q_NULLPTR));
         label_AuthorName->setText(QApplication::translate("Window_Search", "Author", Q_NULLPTR));
         label_Subject->setText(QApplication::translate("Window_Search", "Subject", Q_NULLPTR));
-        pushButton_SearchBook->setText(QApplication::translate("Window_Search", "Search", Q_NULLPTR));
+        label->setText(QApplication::translate("Window_Search", "Book ID ", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("Window_Search", "Search By ID", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("Window_Search", "Search By Name", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("Window_Search", "Search By Author", Q_NULLPTR));
+        pushButton_4->setText(QApplication::translate("Window_Search", "Search By Subject", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -15,6 +15,9 @@ public:
     explicit Window_Search(QWidget *parent = nullptr);
     ~Window_Search();
 
+private slots:
+    void on_pushButton_SearchBook_clicked();
+
 private:
     Ui::Window_Search *ui;
 };
