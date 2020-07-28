@@ -16,10 +16,17 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
+<<<<<<< HEAD
      <x>21</x>
      <y>43</y>
      <width>301</width>
      <height>361</height>
+=======
+     <x>172</x>
+     <y>144</y>
+     <width>261</width>
+     <height>271</height>
+>>>>>>> 5faffb79ed62ac4619190044e5907d48751b4ee1
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -65,7 +72,18 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_AccountType"/>
+       <widget class="QRadioButton" name="radioButton_Admin">
+        <property name="text">
+         <string>ADMIN</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radioButton_Member">
+        <property name="text">
+         <string>MEMBER</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
