@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>img/back.jpg</file>
+        <file>img/pngguru.com (2).png</file>
+        <file>img/user-icon.png</file>
+    </qresource>
+</RCC>
